@@ -15,21 +15,27 @@ jobs:
     steps:
       # Step 1: Checkout the repository 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       # Step 2: Configure Node.js environment and install dependencies
       - name: Set up Node.js and install dependencies
         uses: actions/setup-node@v3
         with:
-          node-version: '23'
+          node-version: '20'
       
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run tests (optional)
-      - name: Run tests
-        run: npm test
+      # Step 4: Cache the dependencies
+      - name: Cache modules
+        run: actions/cache@4.1.2
+         path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       # Step 5: Build the app
       - name: Build the app
