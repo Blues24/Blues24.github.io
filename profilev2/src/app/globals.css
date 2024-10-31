@@ -1,0 +1,38 @@
+
+:root {
+     /* Background Colors */
+  --background-primary: #24283b; /* Main background */
+  --background-secondary: #1a1b26; /* Darker background */
+  --background-tertiary: #2a2e42; /* Tertiary background, for cards or borders */
+
+  /* Text Colors */
+  --text-primary: #c0caf5; /* Main text color */
+  --text-secondary: #a9b1d6; /* Secondary text color */
+  --text-muted: #565f89; /* Muted text, for hints or disabled items */
+
+  /* Accent Colors */
+  --accent-blue: #7aa2f7; /* Primary accent */
+  --accent-green: #9ece6a; /* Success or confirm accent */
+  --accent-yellow: #e0af68; /* Warning accent */
+  --accent-red: #f7768e; /* Error accent */
+  --accent-purple: #bb9af7; /* Secondary accent */
+
+  /* Border and Line Colors */
+  --border-color: #3b4261; /* Border color for containers */
+  --line-color: #2e3348; /* Divider or line color */
+
+  /* Button Colors */
+  --button-primary-bg: var(--accent-blue);
+  --button-primary-text: #ffffff;
+  --button-hover-bg: #6a8cc9; /* Darker blue for button hover */
+  
+}
+ 
+
+body {
+  background-color: var(--background-primary);
+  
+}
+#title {
+  color: var(--accent-purple)
+}
